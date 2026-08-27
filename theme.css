@@ -75,6 +75,21 @@ body {
 .eyebrow span { background: var(--brand-orange); }
 h1 em { -webkit-text-stroke-color: var(--brand-blue); }
 
+.hero-logo-title {
+  width: min(590px, 58vw);
+  max-width: none;
+  margin-top: 34px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.hero-logo-title img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
 .button.primary {
   background: linear-gradient(135deg, var(--brand-blue), #07538f);
   box-shadow: 0 15px 32px rgba(8, 104, 183, 0.18);
@@ -172,5 +187,14 @@ footer {
   .main-nav.open {
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(8, 104, 183, 0.12);
+  }
+
+  .hero-logo-title { width: min(510px, 72vw); }
+}
+
+@media (max-width: 600px) {
+  .hero-logo-title {
+    width: min(360px, 90vw);
+    margin-top: 28px;
   }
 }
