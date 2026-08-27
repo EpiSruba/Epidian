@@ -9,7 +9,7 @@ from PIL import Image, ImageEnhance, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(r"C:\Users\FJ2\Downloads\image3.jpeg")
+SOURCE = Path(r"C:\Users\FJ2\Downloads\image0.png")
 OUT_DIR = ROOT / "assets" / "models"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 TEXTURE_PATH = OUT_DIR / "epidian5-label.png"
@@ -17,20 +17,8 @@ GLB_PATH = OUT_DIR / "epidian5-can.glb"
 
 
 def make_label_texture():
-    photo = ImageOps.exif_transpose(Image.open(SOURCE)).convert("RGB")
-    # Front label corners measured from the supplied reference photograph.
-    quad = (895, 934, 1045, 3290, 2390, 3230, 2470, 900)
-    front = photo.transform(
-        (1180, 1700), Image.Transform.QUAD, quad,
-        resample=Image.Resampling.BICUBIC,
-    )
-    front = ImageEnhance.Contrast(front).enhance(1.05)
-    front = ImageEnhance.Color(front).enhance(0.92)
-    front = front.crop((0, 0, 1060, 1700))
-    texture = ImageOps.fit(
-        front, (2048, 1024), method=Image.Resampling.LANCZOS,
-        centering=(0.48, 0.47),
-    )
+    label = ImageOps.exif_transpose(Image.open(SOURCE)).convert("RGB")
+    texture = ImageOps.contain(label, (2048, 2048), method=Image.Resampling.LANCZOS)
     texture.save(TEXTURE_PATH, optimize=True)
     bio = io.BytesIO()
     texture.save(bio, format="PNG", optimize=True)
@@ -68,6 +56,23 @@ def cylinder_side(radius, y0, y1, segments, material, inward=False, uv_offset=0.
     for i in range(segments):
         a, b, c, d = 2*i, 2*i+1, 2*i+2, 2*i+3
         idx += [a, b, c, c, b, d] if not inward else [a, c, b, c, d, b]
+    add_part(p, n, t, idx, material)
+
+
+def cylinder_segment(radius, y0, y1, start_angle, end_angle, segments, material):
+    """Curved label with exposed metal left outside the supplied angle range."""
+    p, n, t, idx = [], [], [], []
+    for i in range(segments + 1):
+        f = i / segments
+        a = start_angle + (end_angle - start_angle) * f
+        x, z = radius * math.sin(a), radius * math.cos(a)
+        nx, nz = math.sin(a), math.cos(a)
+        p += [(x, y0, z), (x, y1, z)]
+        n += [(nx, 0, nz), (nx, 0, nz)]
+        t += [(f, 1), (f, 0)]
+    for i in range(segments):
+        a, b, c, d = 2*i, 2*i+1, 2*i+2, 2*i+3
+        idx += [a, b, c, c, b, d]
     add_part(p, n, t, idx, material)
 
 
@@ -124,7 +129,9 @@ def build_glb(png_bytes):
     torus(0.96, 0.045, -1.28, 128, 12, 0)
     disk(0.78, 1.285, 128, 1, True)
     torus(0.78, 0.035, 1.285, 128, 10, 0)
-    cylinder_side(1.006, -1.17, 1.08, 160, 2, uv_offset=0.5)
+    # The printed label covers about 72% of the circumference. The remaining
+    # rear sector intentionally exposes the natural brushed-steel body.
+    cylinder_segment(1.008, -1.17, 1.08, math.radians(-130), math.radians(130), 144, 2)
 
     pos = np.asarray(positions, dtype="<f4")
     nor = np.asarray(normals, dtype="<f4")
