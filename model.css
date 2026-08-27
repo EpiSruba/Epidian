@@ -1,7 +1,7 @@
 .hero-art {
-  width: 440px;
-  height: 500px;
-  top: 96px;
+  width: 410px;
+  height: 470px;
+  top: 108px;
 }
 
 .hero-art model-viewer {
@@ -11,6 +11,8 @@
   width: 100%;
   height: 100%;
   background: transparent;
+  transform: rotate(-6deg);
+  transform-origin: center;
   --poster-color: transparent;
   --progress-bar-color: var(--lime);
 }
