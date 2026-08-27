@@ -76,7 +76,7 @@ body {
 h1 em { -webkit-text-stroke-color: var(--brand-blue); }
 
 .hero-logo-title {
-  width: min(590px, 58vw);
+  width: min(420px, 44vw);
   max-width: none;
   margin-top: 34px;
   line-height: 1;
@@ -189,12 +189,12 @@ footer {
     border: 1px solid rgba(8, 104, 183, 0.12);
   }
 
-  .hero-logo-title { width: min(510px, 72vw); }
+  .hero-logo-title { width: min(370px, 58vw); }
 }
 
 @media (max-width: 600px) {
   .hero-logo-title {
-    width: min(360px, 90vw);
+    width: min(280px, 76vw);
     margin-top: 28px;
   }
 }
