@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kompendium wiedzy i poradników o żywicach.">
+  <title>ResinLab — centrum wiedzy o żywicach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#start" aria-label="ResinLab — strona główna">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span>RESIN<span>LAB</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Główna nawigacja">
+      <a class="active" href="#start">Start</a>
+      <a href="#baza-wiedzy">Baza wiedzy</a>
+      <a href="#poradniki">Poradniki</a>
+      <a href="#bezpieczenstwo">Bezpieczeństwo</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="#kontakt">Kontakt <span>↗</span></a>
+    <button class="menu-button" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="eyebrow"><span></span> KOMPLETNA BAZA WIEDZY</div>
+      <h1>Wiedza, która<br><em>nabiera formy.</em></h1>
+      <p class="hero-copy">[Tutaj wpisz krótkie wprowadzenie do strony i opisz, czego użytkownik może się dowiedzieć.]</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#baza-wiedzy">Odkryj bazę wiedzy <span>→</span></a>
+        <a class="button ghost" href="#poradniki"><span class="play">▶</span> Zobacz poradniki</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="resin-form"><div class="shine"></div><div class="bubble b1"></div><div class="bubble b2"></div></div>
+        <div class="art-label label-a"><small>01</small><strong>[NAZWA]</strong></div>
+        <div class="art-label label-b"><small>02</small><strong>[WŁAŚCIWOŚĆ]</strong></div>
+      </div>
+      <div class="scroll-hint"><span></span> PRZEWIŃ, ABY POZNAĆ WIĘCEJ</div>
+    </section>
+
+    <section class="section knowledge" id="baza-wiedzy">
+      <div class="section-heading">
+        <div><span class="index">01</span><p class="kicker">POZNAJ MATERIAŁ</p><h2>Baza wiedzy</h2></div>
+        <p>[Tutaj wprowadź opis sekcji oraz najważniejsze informacje, które pomogą odbiorcy rozpocząć naukę.]</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-card featured"><span class="card-number">01</span><div class="card-icon drop"></div><div><p class="tag">PODSTAWY</p><h3>[Tytuł kategorii]</h3><p>[Krótki opis zawartości kategorii.]</p><a href="#">Przejdź do artykułów →</a></div></article>
+        <article class="topic-card"><span class="card-number">02</span><div class="card-icon hex"></div><div><p class="tag">MATERIAŁY</p><h3>[Tytuł kategorii]</h3><p>[Krótki opis zawartości kategorii.]</p><a href="#">Przejdź do artykułów →</a></div></article>
+        <article class="topic-card"><span class="card-number">03</span><div class="card-icon layers"></div><div><p class="tag">TECHNIKI</p><h3>[Tytuł kategorii]</h3><p>[Krótki opis zawartości kategorii.]</p><a href="#">Przejdź do artykułów →</a></div></article>
+      </div>
+    </section>
+
+    <section class="section guides" id="poradniki">
+      <div class="section-heading light">
+        <div><span class="index">02</span><p class="kicker">KROK PO KROKU</p><h2>Poradniki</h2></div>
+        <p>[Tutaj opisz kolekcję poradników i określ, dla kogo została przygotowana.]</p>
+      </div>
+      <div class="guide-layout">
+        <article class="guide-main">
+          <div class="guide-visual"><span>PORADNIK 01</span><div class="placeholder-art">+</div></div>
+          <div class="guide-content"><div class="meta"><span>[POZIOM]</span><span>[CZAS]</span></div><h3>[Tytuł wyróżnionego poradnika]</h3><p>[Wprowadź krótki opis poradnika.]</p><a href="#">Czytaj poradnik <span>→</span></a></div>
+        </article>
+        <div class="guide-list">
+          <article><span class="guide-no">02</span><div><div class="meta"><span>[KATEGORIA]</span></div><h3>[Tytuł poradnika]</h3><p>[Krótki opis poradnika.]</p></div><a href="#" aria-label="Otwórz poradnik">↗</a></article>
+          <article><span class="guide-no">03</span><div><div class="meta"><span>[KATEGORIA]</span></div><h3>[Tytuł poradnika]</h3><p>[Krótki opis poradnika.]</p></div><a href="#" aria-label="Otwórz poradnik">↗</a></article>
+          <article><span class="guide-no">04</span><div><div class="meta"><span>[KATEGORIA]</span></div><h3>[Tytuł poradnika]</h3><p>[Krótki opis poradnika.]</p></div><a href="#" aria-label="Otwórz poradnik">↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section safety" id="bezpieczenstwo">
+      <div class="safety-mark">!</div>
+      <div><p class="kicker">PRACUJ ODPOWIEDZIALNIE</p><h2>Bezpieczeństwo<br>przede wszystkim.</h2></div>
+      <div class="safety-copy"><p>[Tutaj umieść najważniejsze zasady bezpieczeństwa, środki ochrony i ostrzeżenia.]</p><a class="button dark" href="#">Poznaj zasady <span>→</span></a></div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="section-heading"><div><span class="index">03</span><p class="kicker">PYTANIA I ODPOWIEDZI</p><h2>FAQ</h2></div><p>[Dodaj odpowiedzi na pytania, które najczęściej pojawiają się wśród użytkowników.]</p></div>
+      <div class="accordion">
+        <details><summary><span>01</span>[Treść pytania]<i>+</i></summary><p>[Treść odpowiedzi.]</p></details>
+        <details><summary><span>02</span>[Treść pytania]<i>+</i></summary><p>[Treść odpowiedzi.]</p></details>
+        <details><summary><span>03</span>[Treść pytania]<i>+</i></summary><p>[Treść odpowiedzi.]</p></details>
+        <details><summary><span>04</span>[Treść pytania]<i>+</i></summary><p>[Treść odpowiedzi.]</p></details>
+      </div>
+    </section>
+
+    <section class="newsletter" id="kontakt">
+      <p class="kicker">BĄDŹ NA BIEŻĄCO</p><h2>[Wpisz zachętę<br>do kontaktu lub newslettera]</h2>
+      <form><label class="sr-only" for="email">Adres e-mail</label><input id="email" type="email" placeholder="Twój adres e-mail" required><button type="submit">Zapisz się →</button></form>
+      <small>[Tutaj umieść informację dotyczącą formularza i prywatności.]</small>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#start"><span class="brand-mark"><i></i></span><span>RESIN<span>LAB</span></span></a>
+    <p>[Krótki opis marki lub strony.]</p>
+    <div class="footer-links"><a href="#baza-wiedzy">Baza wiedzy</a><a href="#poradniki">Poradniki</a><a href="#bezpieczenstwo">Bezpieczeństwo</a><a href="#faq">FAQ</a></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> [Nazwa].</span><span><a href="#">Polityka prywatności</a> · <a href="#">Regulamin</a></span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
