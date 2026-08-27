@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="brand.css">
+  <link rel="stylesheet" href="model.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 </head>
 <body>
   <div class="ambient ambient-one"></div>
@@ -41,11 +43,26 @@
         <a class="button primary" href="#baza-wiedzy">Odkryj bazę wiedzy <span>→</span></a>
         <a class="button ghost" href="#poradniki"><span class="play">▶</span> Zobacz poradniki</a>
       </div>
-      <div class="hero-art" aria-hidden="true">
+      <div class="hero-art">
         <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="resin-form"><div class="shine"></div><div class="bubble b1"></div><div class="bubble b2"></div></div>
-        <div class="art-label label-a"><small>01</small><strong>[NAZWA]</strong></div>
-        <div class="art-label label-b"><small>02</small><strong>[WŁAŚCIWOŚĆ]</strong></div>
+        <model-viewer
+          src="assets/models/epidian5-can.glb?v=4"
+          alt="Obracający się model 3D puszki Epidian 5"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="18deg"
+          camera-orbit="-28deg 72deg 110%"
+          min-camera-orbit="auto 52deg 85%"
+          max-camera-orbit="auto 88deg 150%"
+          field-of-view="30deg"
+          shadow-intensity="1.2"
+          shadow-softness="0.9"
+          exposure="1.05"
+          loading="eager">
+        </model-viewer>
+        <div class="model-hint"><span>↻</span> OBRÓĆ MODEL</div>
       </div>
       <div class="scroll-hint"><span></span> PRZEWIŃ, ABY POZNAĆ WIĘCEJ</div>
     </section>

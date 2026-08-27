@@ -26,20 +26,11 @@ def make_label_texture():
     )
     front = ImageEnhance.Contrast(front).enhance(1.05)
     front = ImageEnhance.Color(front).enhance(0.92)
-    texture = Image.new("RGB", (2048, 1024), (220, 221, 216))
     front = front.crop((0, 0, 1060, 1700))
-    fitted = ImageOps.fit(front, (900, 980), method=Image.Resampling.LANCZOS, centering=(0.48, 0.47))
-    texture.paste(fitted, (574, 22))
-    # Blend the photographed panel into a neutral label wrap.
-    overlay = Image.new("RGBA", texture.size, (0, 0, 0, 0))
-    px = overlay.load()
-    for x in range(texture.width):
-        edge = min(abs(x - 574), abs(x - 1473))
-        if x < 574 or x > 1473:
-            alpha = max(0, 44 - min(44, edge))
-            for y in range(texture.height):
-                px[x, y] = (255, 255, 255, alpha)
-    texture = Image.alpha_composite(texture.convert("RGBA"), overlay).convert("RGB")
+    texture = ImageOps.fit(
+        front, (2048, 1024), method=Image.Resampling.LANCZOS,
+        centering=(0.48, 0.47),
+    )
     texture.save(TEXTURE_PATH, optimize=True)
     bio = io.BytesIO()
     texture.save(bio, format="PNG", optimize=True)
@@ -63,7 +54,7 @@ def add_part(pos, norm, uv, idx, material):
     parts.append((start_v, len(pos), start_i, len(idx), material))
 
 
-def cylinder_side(radius, y0, y1, segments, material, inward=False):
+def cylinder_side(radius, y0, y1, segments, material, inward=False, uv_offset=0.0):
     p, n, t, idx = [], [], [], []
     for i in range(segments + 1):
         a = 2 * math.pi * i / segments
@@ -73,7 +64,7 @@ def cylinder_side(radius, y0, y1, segments, material, inward=False):
             nx, nz = -nx, -nz
         p += [(x, y0, z), (x, y1, z)]
         n += [(nx, 0, nz), (nx, 0, nz)]
-        t += [(i / segments, 1), (i / segments, 0)]
+        t += [(i / segments + uv_offset, 1), (i / segments + uv_offset, 0)]
     for i in range(segments):
         a, b, c, d = 2*i, 2*i+1, 2*i+2, 2*i+3
         idx += [a, b, c, c, b, d] if not inward else [a, c, b, c, d, b]
@@ -133,7 +124,7 @@ def build_glb(png_bytes):
     torus(0.96, 0.045, -1.28, 128, 12, 0)
     disk(0.78, 1.285, 128, 1, True)
     torus(0.78, 0.035, 1.285, 128, 10, 0)
-    cylinder_side(1.006, -1.17, 1.08, 160, 2)
+    cylinder_side(1.006, -1.17, 1.08, 160, 2, uv_offset=0.5)
 
     pos = np.asarray(positions, dtype="<f4")
     nor = np.asarray(normals, dtype="<f4")
@@ -183,9 +174,9 @@ def build_glb(png_bytes):
         "samplers": [{"magFilter": 9729, "minFilter": 9987, "wrapS": 10497, "wrapT": 33071}],
         "textures": [{"sampler": 0, "source": 0}],
         "materials": [
-            {"name": "Brushed steel", "pbrMetallicRoughness": {"baseColorFactor": [0.72,0.74,0.74,1], "metallicFactor": 0.92, "roughnessFactor": 0.24}},
-            {"name": "Lid steel", "pbrMetallicRoughness": {"baseColorFactor": [0.60,0.63,0.64,1], "metallicFactor": 0.96, "roughnessFactor": 0.18}},
-            {"name": "Printed label", "pbrMetallicRoughness": {"baseColorTexture": {"index": 0}, "metallicFactor": 0.0, "roughnessFactor": 0.72}},
+            {"name": "Brushed steel", "doubleSided": True, "pbrMetallicRoughness": {"baseColorFactor": [0.72,0.74,0.74,1], "metallicFactor": 0.92, "roughnessFactor": 0.24}},
+            {"name": "Lid steel", "doubleSided": True, "pbrMetallicRoughness": {"baseColorFactor": [0.60,0.63,0.64,1], "metallicFactor": 0.96, "roughnessFactor": 0.18}},
+            {"name": "Printed label", "doubleSided": True, "pbrMetallicRoughness": {"baseColorTexture": {"index": 0}, "metallicFactor": 0.0, "roughnessFactor": 0.72}},
         ],
     }
     js = json.dumps(gltf, separators=(",", ":")).encode("utf-8")
