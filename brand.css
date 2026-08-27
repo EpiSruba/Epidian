@@ -1,0 +1,20 @@
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 176px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .brand img { width: 150px; }
+}
+
+@media (max-width: 600px) {
+  .brand img { width: 138px; }
+}
