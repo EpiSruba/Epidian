@@ -312,12 +312,17 @@
   font: 700 15px/1.35 'Manrope', sans-serif;
 }
 
-.application-copy p {
+.application-copy ul {
   margin: 0;
+  padding-left: 21px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.7;
 }
+
+.application-copy li { padding-left: 4px; }
+.application-copy li + li { margin-top: 5px; }
+.application-copy li::marker { color: var(--brand-orange); }
 
 .pac-guide {
   max-width: none;
