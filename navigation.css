@@ -170,6 +170,31 @@
   line-height: 1.75;
 }
 
+.product-description {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.product-description p {
+  margin: 0 0 12px;
+}
+
+.product-description ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.product-description li {
+  margin-bottom: 5px;
+  padding-left: 3px;
+}
+
+.product-description li::marker {
+  color: var(--brand-orange);
+}
+
 .product-details {
   display: flex;
   flex-wrap: wrap;
