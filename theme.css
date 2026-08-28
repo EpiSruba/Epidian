@@ -107,9 +107,73 @@ h1 em { -webkit-text-stroke-color: var(--brand-blue); }
   background: linear-gradient(180deg, rgba(255,255,255,0), rgba(216, 239, 251, 0.32));
 }
 
+.knowledge-heading {
+  max-width: 760px;
+  margin-bottom: 54px;
+}
+
+.knowledge-heading h2 {
+  margin-top: 8px;
+  font-size: clamp(44px, 6vw, 72px);
+  letter-spacing: -3px;
+}
+
+.knowledge-text {
+  border-top: 1px solid rgba(8, 104, 183, 0.18);
+}
+
+.knowledge-text article {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(36px, 7vw, 100px);
+  padding: 58px 0 62px;
+  border-bottom: 1px solid rgba(8, 104, 183, 0.18);
+}
+
+.knowledge-topic-heading span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--brand-orange);
+  font: 700 11px 'Manrope', sans-serif;
+  letter-spacing: 2px;
+}
+
+.knowledge-topic-heading h3 {
+  max-width: 390px;
+  color: var(--brand-blue-dark);
+  font-size: clamp(29px, 3.2vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+}
+
+.knowledge-topic-copy {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.knowledge-topic-copy p {
+  margin: 0 0 20px;
+}
+
+.knowledge-topic-copy p:last-child {
+  margin-bottom: 0;
+}
+
 .topic-grid {
   border-color: rgba(8, 104, 183, 0.17);
   box-shadow: 0 22px 60px rgba(20, 100, 150, 0.07);
+}
+
+@media (max-width: 760px) {
+  .knowledge-heading { margin-bottom: 38px; }
+  .knowledge-text article {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 42px 0 46px;
+  }
+  .knowledge-topic-copy { font-size: 15px; line-height: 1.72; }
 }
 
 .topic-card {
