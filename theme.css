@@ -198,3 +198,7 @@ footer {
     margin-top: 28px;
   }
 }
+.hero-copy strong {
+  color: var(--brand-blue-dark);
+  font-weight: 700;
+}
