@@ -445,6 +445,8 @@
 .z1-applications li::marker { color: var(--brand-orange); }
 .z1-ratio { grid-template-columns: 1fr; }
 .z1-curing ol { grid-template-columns: repeat(3, 1fr); }
+.ida-curing ol { grid-template-columns: 1fr; }
+.ida-curing li { max-width: 420px; }
 
 .product-details {
   display: flex;
