@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="brand.css?v=7">
   <link rel="stylesheet" href="model.css?v=7">
   <link rel="stylesheet" href="theme.css?v=8">
+  <link rel="stylesheet" href="navigation.css?v=1">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 </head>
 <body>
@@ -24,7 +25,19 @@
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Główna nawigacja">
       <a class="active" href="#start">Start</a>
-      <a href="#baza-wiedzy">Baza wiedzy</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="resins-menu">
+          Żywice epoksydowe <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="nav-dropdown-menu" id="resins-menu">
+          <a href="#epidian-5">Epidian 5</a>
+          <a href="#epidian-53">Epidian 53</a>
+          <a href="#epidian-601">Epidian 601</a>
+          <a href="#epidian-652">Epidian 652</a>
+          <a href="#epidian-deco">Epidian Deco</a>
+          <a href="#epidian-6011">Epidian 6011</a>
+        </div>
+      </div>
       <a href="#poradniki">Poradniki</a>
       <a href="#bezpieczenstwo">Bezpieczeństwo</a>
       <a href="#faq">FAQ</a>
@@ -80,6 +93,14 @@
         <article class="topic-card"><span class="card-number">02</span><div class="card-icon hex"></div><div><p class="tag">MATERIAŁY</p><h3>[Tytuł kategorii]</h3><p>[Krótki opis zawartości kategorii.]</p><a href="#">Przejdź do artykułów →</a></div></article>
         <article class="topic-card"><span class="card-number">03</span><div class="card-icon layers"></div><div><p class="tag">TECHNIKI</p><h3>[Tytuł kategorii]</h3><p>[Krótki opis zawartości kategorii.]</p><a href="#">Przejdź do artykułów →</a></div></article>
       </div>
+      <div class="resin-index" aria-label="Żywice epoksydowe">
+        <article id="epidian-5"><span>01</span><p class="tag">ŻYWICA EPOKSYDOWA</p><h3>Epidian 5</h3><p>[Tutaj dodaj informacje o produkcie.]</p></article>
+        <article id="epidian-53"><span>02</span><p class="tag">ŻYWICA EPOKSYDOWA</p><h3>Epidian 53</h3><p>[Tutaj dodaj informacje o produkcie.]</p></article>
+        <article id="epidian-601"><span>03</span><p class="tag">ŻYWICA EPOKSYDOWA</p><h3>Epidian 601</h3><p>[Tutaj dodaj informacje o produkcie.]</p></article>
+        <article id="epidian-652"><span>04</span><p class="tag">ŻYWICA EPOKSYDOWA</p><h3>Epidian 652</h3><p>[Tutaj dodaj informacje o produkcie.]</p></article>
+        <article id="epidian-deco"><span>05</span><p class="tag">ŻYWICA EPOKSYDOWA</p><h3>Epidian Deco</h3><p>[Tutaj dodaj informacje o produkcie.]</p></article>
+        <article id="epidian-6011"><span>06</span><p class="tag">ŻYWICA EPOKSYDOWA</p><h3>Epidian 6011</h3><p>[Tutaj dodaj informacje o produkcie.]</p></article>
+      </div>
     </section>
 
     <section class="section guides" id="poradniki">
@@ -129,6 +150,6 @@
     <div class="footer-links"><a href="#baza-wiedzy">Baza wiedzy</a><a href="#poradniki">Poradniki</a><a href="#bezpieczenstwo">Bezpieczeństwo</a><a href="#faq">FAQ</a></div>
     <div class="footer-bottom"><span>© <span id="year"></span> [Nazwa].</span><span><a href="#">Polityka prywatności</a> · <a href="#">Regulamin</a></span></div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
