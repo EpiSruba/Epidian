@@ -182,6 +182,12 @@
   border-top: 1px solid rgba(8, 104, 183, 0.13);
 }
 
+.set-layout-reversed .pac-product-media {
+  order: 2;
+  border-right: 0;
+  border-left: 1px solid rgba(8, 104, 183, 0.1);
+}
+
 .set-image-placeholder {
   align-content: center;
   background:
@@ -467,6 +473,10 @@
     padding: 24px;
     border-right: 0;
     border-bottom: 1px solid rgba(8, 104, 183, 0.1);
+  }
+  .set-layout-reversed .pac-product-media {
+    order: initial;
+    border-left: 0;
   }
   .pac-product-media img { position: static; max-height: 390px; }
   .pac-guide { padding: 42px 26px 50px; }
