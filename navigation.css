@@ -357,6 +357,8 @@
   background: #fff;
 }
 
+.pac-ratio-single { grid-template-columns: 1fr; }
+
 .pac-ratio-main { padding: 24px; }
 .pac-ratio-main > span {
   color: var(--brand-blue);
