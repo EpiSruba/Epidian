@@ -178,6 +178,34 @@
   object-fit: contain;
 }
 
+.z1-overview {
+  border-top: 1px solid rgba(8, 104, 183, 0.13);
+}
+
+.product-image-placeholder {
+  align-content: center;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 228, 99, 0.5), transparent 30%),
+    radial-gradient(circle at 72% 75%, rgba(86, 197, 209, 0.38), transparent 34%),
+    #f3faff;
+  color: var(--brand-blue-dark);
+  text-align: center;
+}
+
+.product-image-placeholder > span {
+  display: block;
+  color: var(--brand-orange);
+  font: 200 clamp(80px, 10vw, 132px)/1 'DM Sans', sans-serif;
+}
+
+.product-image-placeholder > p {
+  margin: 16px 0 0;
+  color: #6e8ba1;
+  font-size: 12px;
+  line-height: 1.55;
+  letter-spacing: 0.5px;
+}
+
 .product-copy {
   display: flex;
   flex-direction: column;
@@ -365,6 +393,22 @@
 .pac-curing li > span { display: block; margin-bottom: 5px; color: var(--brand-orange); font: 800 12px 'Manrope', sans-serif; }
 .pac-curing li > strong { display: block; min-height: 36px; color: var(--brand-blue-dark); font-size: 13px; }
 .pac-curing li p { margin: 6px 0 0; font-size: 11px; line-height: 1.5; }
+
+.z1-applications {
+  margin-top: 24px;
+  padding: 22px 24px;
+  border-radius: 12px;
+  background: rgba(217, 239, 251, 0.42);
+}
+.z1-applications h5 { margin: 0 0 8px; color: var(--brand-blue-dark); font: 700 18px 'Manrope', sans-serif; }
+.z1-applications p,
+.z1-applications li { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.z1-applications p { margin: 0 0 11px; }
+.z1-applications ul { margin: 0; padding-left: 20px; }
+.z1-applications li { margin-bottom: 4px; padding-left: 3px; }
+.z1-applications li::marker { color: var(--brand-orange); }
+.z1-ratio { grid-template-columns: 1fr; }
+.z1-curing ol { grid-template-columns: repeat(3, 1fr); }
 
 .product-details {
   display: flex;
