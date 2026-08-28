@@ -267,6 +267,37 @@
   color: var(--brand-orange);
 }
 
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 580px;
+  margin-top: 22px;
+}
+
+.product-specs > div {
+  padding: 15px 16px;
+  border: 1px solid rgba(8, 104, 183, 0.14);
+  border-radius: 9px;
+  background: rgba(217, 239, 251, 0.34);
+}
+
+.product-specs span {
+  display: block;
+  margin-bottom: 5px;
+  color: #6e8ba1;
+  font: 700 9px 'Manrope', sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.product-specs strong {
+  color: var(--brand-blue-dark);
+  font: 700 14px/1.35 'Manrope', sans-serif;
+}
+
+.product-specs small { font-size: 11px; font-weight: 500; }
+
 .pac-guide {
   max-width: none;
   margin: 0;
@@ -480,6 +511,7 @@
   }
   .pac-product-media img { position: static; max-height: 390px; }
   .pac-guide { padding: 42px 26px 50px; }
+  .product-specs { grid-template-columns: 1fr; }
   .pac-ratio { grid-template-columns: 1fr; }
   .pac-ratio-notes { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
   .pac-ratio-notes p { border-top: 1px solid rgba(8, 104, 183, 0.13); border-left: 0; }
