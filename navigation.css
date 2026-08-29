@@ -471,6 +471,7 @@
 .z1-applications ul { margin: 0; padding-left: 20px; }
 .z1-applications li { margin-bottom: 4px; padding-left: 3px; }
 .z1-applications li::marker { color: var(--brand-orange); }
+.z1-applications .limit-warning { color: var(--brand-blue-dark); font-weight: 800; }
 .z1-ratio { grid-template-columns: 1fr; }
 .z1-curing ol { grid-template-columns: repeat(3, 1fr); }
 .ida-curing ol { grid-template-columns: repeat(2, 1fr); }
