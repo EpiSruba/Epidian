@@ -395,14 +395,16 @@
 
 .pac-steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-top: 16px;
 }
 .pac-steps > div {
+  min-width: 0;
   padding: 20px 17px;
   border-radius: 10px;
   background: rgba(217, 239, 251, 0.42);
+  overflow-wrap: anywhere;
 }
 .pac-steps > div > span {
   display: grid;
@@ -436,7 +438,7 @@
 .pac-curing-note { margin: 0 0 17px; }
 .pac-curing ol {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin: 0;
   padding: 0;
@@ -473,8 +475,8 @@
 .z1-applications li::marker { color: var(--brand-orange); }
 .z1-applications .limit-warning { color: var(--brand-blue-dark); font-weight: 800; }
 .z1-ratio { grid-template-columns: 1fr; }
-.z1-curing ol { grid-template-columns: repeat(3, 1fr); }
-.ida-curing ol { grid-template-columns: repeat(2, 1fr); }
+.z1-curing ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ida-curing ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ida-curing li { max-width: 420px; }
 
 .product-details {
