@@ -643,6 +643,27 @@
   margin-bottom: 0;
 }
 
+.footer-about {
+  grid-column: 1 / -1;
+  max-width: 980px;
+  padding: 12px 0 18px;
+}
+
+.footer-about p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.footer-about p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-about strong {
+  color: var(--ink);
+}
+
 @media (max-width: 900px) {
   .nav-dropdown-toggle {
     width: 100%;
