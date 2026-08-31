@@ -37,6 +37,21 @@ document.addEventListener('keydown', (event) => {
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-document.querySelector('.newsletter form').addEventListener('submit', (event) => {
-  event.preventDefault();
+const newsletterForm = document.querySelector('.newsletter form');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+  });
+}
+
+const scrollToCurrentSection = () => {
+  if (!window.location.hash) return;
+  const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+  if (target) target.scrollIntoView({ block: 'start' });
+};
+
+window.addEventListener('load', () => {
+  requestAnimationFrame(() => requestAnimationFrame(scrollToCurrentSection));
 });
+
+window.addEventListener('hashchange', scrollToCurrentSection);
