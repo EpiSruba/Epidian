@@ -362,6 +362,12 @@
   letter-spacing: -1.2px;
 }
 
+#epidian-deco-k-title {
+  white-space: nowrap;
+  font-size: clamp(14px, 2.4vw, 30px);
+  letter-spacing: -0.8px;
+}
+
 .pac-guide-heading > p:last-child,
 .pac-ratio p,
 .pac-important p,
