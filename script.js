@@ -55,3 +55,18 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', scrollToCurrentSection);
+
+const backToTopButton = document.querySelector('.back-to-top');
+
+const updateBackToTopButton = () => {
+  const isVisible = window.scrollY > 600;
+  backToTopButton.classList.toggle('is-visible', isVisible);
+  backToTopButton.tabIndex = isVisible ? 0 : -1;
+};
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', updateBackToTopButton, { passive: true });
+updateBackToTopButton();
